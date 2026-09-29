@@ -1,0 +1,87 @@
+// COLORS
+$white    : #FFFFFF;
+$black    : #000000;
+
+$color-blue-900 : #0B0D17;
+$color-blue-300 : #D0D6F9;
+$color-grey     : #979797;
+
+//Background Colors
+//$primary-background     : $color-blue-300;
+//$secondary-background : $color-blue-600;
+
+//Text Colors
+$primary-text-color   : $color-blue-300;
+$secondary-text-color : $white;
+
+//Tab Colors
+$tab-border-light           : $white;
+$tab-active-bg              : $white;
+$tab-active-text            : $black;
+//$border-dark          : $color-grey-600;
+//$border-accent        : $color-red-400;
+
+//Border Line
+$border-line-color  :   $color-grey;
+
+// Button colors
+//$tab-primary-bg         : $color-blue-600;    
+//$btn-secondary-bg       : $color-grey-50;    
+//$btn-accent-bg          : $color-red-400;     
+
+//$btn-hover-bg           : $white;
+
+// Button text colors
+//$btn-primary-text         : $white;
+//$btn-primary-text-hover   : $color-blue-600;  
+
+//$btn-secondary-text       : $color-blue-950;
+//$btn-secondary-text-hover : $color-grey-600;
+
+//$tab-accent-text          :  $black;
+//$tab-accent-text-hover    :  $color-red-400;   
+
+// SPACING
+$spacing-0   : 0px;
+$spacing-25  : 0.125rem;   // 2px   
+$spacing-50  : 0.25rem;    // 4px
+$spacing-100 : 0.5rem;     // 8px
+$spacing-150 : 0.75rem;    // 12px
+$spacing-200 : 1rem;       // 16px
+$spacing-300 : 1.5rem;     // 24px
+$spacing-400 : 2rem;       // 32px
+$spacing-500 : 2.5rem;     // 40px
+$spacing-600 : 3rem;       // 48px
+$spacing-700 : 3.5rem;     // 56px
+$spacing-800 : 4rem;       // 64px
+$spacing-900 : 4.5rem;     // 72px;
+$spacing-1000: 5rem;       // 80px
+$spacing-1200: 6rem;       // 96px
+$spacing-1500: 7.5rem ;    // 120px
+$spacing-1600: 8rem;       // 128px   
+
+// TYPOGRAPHY
+// Font Families
+$ff-bellefair: "Bellefair", serif;
+$ff-barlow-condensed: "Barlow Condensed", sans-serif;
+//$ff-belle   : 'Bellefair';
+
+// Typography — font sizes
+$fs-50 : 0.875rem;   // 14px
+$fs-100: 0.9375rem;  // 15px — small body
+$fs-200: 1rem;       // 16px — base body
+$fs-300: 1.125rem;   // 18px — large body
+$fs-400: 1.25rem;    // 20px — h3 desktop
+$fs-500: 1.5rem;     // 24px — h3 mobile
+$fs-600: 1.75rem;    // 28px
+$fs-700: 1.875rem;   // 30px — clamp min
+$fs-800: 2rem;       // 32px — h2 max
+$fs-900: 3rem;       // 48px — h1 max
+
+$fw-bold      : 600;
+$fw-medium    : 500;
+$fw-regular   : 400;
+
+//$border-radius-s   : 0.3125rem;  //5px
+//$border-radius-lg  : 0.9375rem;  //15px
+

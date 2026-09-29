@@ -1,0 +1,129 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bellefair&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Frontend Mentor | Space tourism website</title>
+</head>
+<body class="home-page">
+  
+    <header class="header">
+      <div class="header__bar">
+        <img class="header__logo" src="./assets/shared/logo.svg" alt="Space tourism logo">
+        <div class="header__line"></div>
+        <button class="header__toggle btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-nav">
+            <img src="./assets/shared/icon-hamburger.svg" alt="">
+        </button>
+      </div>
+      <nav id="main-nav" class="nav" aria-label="Primary Navigation">
+        <button class="nav__close btn" aria-label="Close navigation menu"> 
+          <img src="./assets/shared/icon-close.svg" alt="">
+        </button>
+        <ul class="nav__list">
+          <li class="nav__item">
+             <a class="nav__link" data-page="home-page" href="#"> 00 Home</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" data-page="destination-page"  href="#">  01 Destination</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" data-page="crew-page" href="#">  02 Crew</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" data-page="technology-page"  href="#"> 03 Technology</a>
+          </li>
+        </ul>
+      </nav>  
+    </header>
+    
+    <main class="home__page page active" id="home-page" >
+     <section class="intro container">
+        <div class="intro__text">
+          <p class="intro__tag  text-tag uppercase">So, you want to travel to</p>
+          <h1 class="intro__title heading-xl uppercase">Space</h1>
+       
+        <p class="intro__description text-sm">Let’s face it; if you want to go to space, you might as well genuinely go to 
+          outer space and not hover kind of on the edge of it. Well sit back, and relax 
+          because we’ll give you a truly out of this world experience!</p>
+        </div>
+        <div class="intro__link">
+          <a class="intro__button uppercase" data-page="destination-page" href="#">Explore</a>
+        </div>
+        
+     </section>
+    </main>
+
+  <!-- DESTINATION PAGE -->
+  <main class="destination__page page hidden" id="destination-page">
+    <section class="destination container">
+        <h1 class="destination__title heading-sm uppercase"><span class="section-number">01</span> Pick your destination</h1>
+        <div class="destination__content">
+          <div class="destination__image">
+            <img class="planet-img"src="" alt="">
+          </div>
+
+          <div class="destination__explorer">
+            <div class="destination__tabs" role="tablist">
+            </div>
+            
+            <article class="destination__info active" data-destination="moon" id="tab1" role="tabpanel" aria-labelledby="tab-btn-1">
+            </article>
+          </div>
+        </div>
+    </section>
+  </main>
+
+  <!-- CREW PAGE -->
+  <main class="crew__page page hidden" id="crew-page">
+    <section class="crew container">
+      <h1 class="crew__title heading-sm uppercase"><span class="section-number">02</span> Meet your crew</h1>
+      <div class="crew__content">
+        <div class="crew__explorer">
+          <article class="crew__info active" data-destination="commander" id="tab1" role="tabpanel" aria-labelledby="tab-btn-1">
+          </article>
+          <div class="crew__tabs" role="tablist">
+          </div>
+        </div>
+        <div class="crew__image-wrapper">
+            <img class="crew__image" src="" alt="">
+         </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- TECHNOLOGY PAGE -->
+  <main class="technology__page page hidden" id="technology-page">
+    <section class="technology container">
+        <h1 class="technology__title heading-sm uppercase"><span class="section-number">03</span> Space launch 101</h1>
+        
+        <div class="technology__content">
+          <div class="technology__image-wrapper">
+            <picture>
+              <source media="(min-width: 1024px)" 
+                      srcset="./assets/technology/image-launch-vehicle-portrait.jpg"
+                      >
+              <img class="technology__image" 
+                   src="./assets/technology/image-launch-vehicle-landscape.jpg" 
+                    alt="Launch vehicle">
+            </picture>
+          </div>
+          <div class="technology__explorer">
+
+            <div class="technology__tabs" role="tablist">
+            </div>
+            
+            <article class="technology__info active" data-destination="vehicle" id="tab1" role="tabpanel" aria-labelledby="tab-btn-1" aria-hidden="false">
+            </article>
+          </div>
+        </div>
+      </section>
+  </main>
+
+  <script src="./js/nav.js" defer></script>
+  <script src="./js/index.js" defer></script>
+</body>>

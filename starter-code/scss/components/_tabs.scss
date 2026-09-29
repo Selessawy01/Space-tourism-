@@ -1,0 +1,46 @@
+@use "../abstract/variables" as v;
+
+.destination__tab-btn {
+    position        : relative;
+    display         : block;
+    
+    background      : transparent;
+    border          : none;
+    cursor          : pointer;
+    
+    color           : v.$secondary-text-color;
+    font-size       : v.$fs-50;   
+    font-family     : v.$ff-barlow-condensed;
+    font-weight     : v.$fw-regular;
+    letter-spacing  : 15%;
+
+
+}
+
+.destination__tab-btn:hover,
+.destination__tab-btn.active {
+    font-weight     : v.$fw-medium;
+    color           : v.$secondary-text-color;
+}
+
+.destination__tab-btn::after {
+    content         : "";
+    position        : absolute;
+    left            : 50%;
+    bottom          : -20px;
+    transform       : translateX(-50%);
+    
+    width           : 0;
+    height          : 0.25rem;
+   background-color : v.$white;
+    transition      : width 0.3s ease;
+}
+
+.destination__tab-btn:hover::after,
+.destination__tab-btn.active::after {
+    width           : 40%;
+    
+    @media(min-width:48rem){
+    width           : 100%;
+    }
+}

@@ -1,0 +1,17 @@
+@use "../abstract/variables" as v;
+@use "../abstract/breakpoints" as b;
+@use "../abstract/mixins" as m;
+
+.container{
+    max-width       : 69.375rem;
+    margin-inline   : auto;
+    padding-inline  : v.$spacing-300;
+
+    @media(min-width: b.$bp-md) {
+    padding-inline  : v.$spacing-500;
+    }
+
+    @media(min-width: b.$bp-lg) {
+   padding-inline  :0;
+    }
+}   

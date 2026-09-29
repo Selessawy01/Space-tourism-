@@ -1,0 +1,50 @@
+@use "../abstract/variables" as v;
+
+*, *::after, *::before {
+    margin    : 0;
+    padding   : 0;
+    box-sizing: border-box;
+}
+
+img,picture,video,canvas,svg {   
+    display   : block;
+    max-width : 100%;  
+    height    : auto;
+}
+
+button,
+input,
+textarea,
+select {
+    font  : inherit;
+}
+
+html,body {
+  // font-family : v.$ff-rubik;
+   overflow-x  : hidden;
+   
+}
+html.menu-open,
+body.menu-open {
+    overflow : hidden;
+    height   : 100vh;
+}
+
+//a {
+//  text-decoration   : none; // removes underline from ALL links
+//  color             : inherit;        // removes default blue color too
+//}
+
+
+
+
+body{
+    min-height     : 100vh;
+    display        : flex;
+    flex-direction : column;
+}
+main{
+    flex:1;
+    // height: 100vh;
+    //height:600px;
+}

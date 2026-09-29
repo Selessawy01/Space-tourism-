@@ -1,0 +1,198 @@
+@use "../abstract/variables" as v;
+@use "../abstract/breakpoints" as b;
+@use "../abstract/mixins" as m;
+
+body.destination-page{
+    background-image    : url('../assets/destination/background-destination-mobile.jpg');
+    background-size     : cover;
+    background-position : center;
+    min-height          : 100vh;
+
+    @media(min-width: b.$bp-md){
+        background-image: url('../assets/destination/background-destination-tablet.jpg');
+    }
+    @media(min-width: b.$bp-lg){
+        background-image: url('../assets/destination/background-destination-desktop.jpg');
+    }   
+}
+
+.destination{
+    @include m.flex(column,center,center);
+    width         : 100%;
+    height        : 100%;
+    padding-block : v.$spacing-300;
+    gap           : v.$spacing-300;
+
+    @media(min-width: b.$bp-lg){
+    padding-block  : v.$spacing-600;
+    }
+}
+
+.destination__title{
+     @media(min-width: b.$bp-md){
+       text-align  : left;
+    }
+}
+
+.destination__content{
+    @include m.flex(column,center,center);
+    gap     : v.$spacing-400;
+    width   : 100% ;
+   
+    @media(min-width: b.$bp-lg){
+    display               : grid;
+    grid-template-columns : 1fr 1fr;
+    gap                   : v.$spacing-400;
+    align-items           : center;
+    }
+}
+
+.destination__image{
+  width           : 100%;
+  padding-block   : v.$spacing-300;
+  @include m.flex(center,center);
+}
+
+.planet-img{
+    width   : clamp(9.375rem, 40vw,30rem);
+    height  : clamp(9.375rem, 40vw,30rem);
+}
+
+.destination__explorer{
+@include m.flex(column,center,center);
+    gap    : clamp(v.$spacing-200, 3vw, v.$spacing-500);
+    width  : 100%;
+
+    @media(min-width: b.$bp-md){
+    padding-inline  : v.$spacing-600;
+    }
+
+    @media(min-width: b.$bp-lg){
+    align-items    : flex-start;
+    gap            : v.$spacing-600;
+    padding        : v.$spacing-1600 v.$spacing-600;
+    width          : 100%;
+    }
+}
+
+.destination__tabs{
+    @include m.flex(row,center,center);
+    width    : 100%;
+    gap      : v.$spacing-400;
+    padding  :0 v.$spacing-500;
+}
+
+.destination__tab-btn {
+    position        : relative;
+    display         : block;
+    
+    background      : transparent;
+    border          : none;
+    cursor          : pointer;
+    
+    color           : v.$secondary-text-color;
+    font-size       : v.$fs-50;   
+    font-family     : v.$ff-barlow-condensed;
+    font-weight     : v.$fw-regular;
+    letter-spacing  : 15%;
+
+
+}
+
+.destination__tab-btn:hover,
+.destination__tab-btn.active {
+    font-weight     : v.$fw-medium;
+    color           : v.$secondary-text-color;
+}
+
+.destination__tab-btn::after {
+    content         : "";
+    position        : absolute;
+    left            : 50%;
+    bottom          : -20px;
+    transform       : translateX(-50%);
+    
+    width           : 0;
+    height          : 0.25rem;
+   background-color : v.$white;
+    transition      : width 0.3s ease;
+}
+
+.destination__tab-btn:hover::after,
+.destination__tab-btn.active::after {
+    width           : 40%;
+    
+    @media(min-width:48rem){
+    width           : 100%;
+    }
+}
+
+.destination__info {
+  @include m.flex(column, center, center);
+  width     : 100%;
+  display   : none; 
+
+  &.active {
+    display: flex;
+  }
+}
+
+.destination__name{
+    padding-bottom: v.$spacing-200;
+}
+
+.destination__border{
+    width            : 100%;
+    height           : 1px;
+    background-color : v.$border-line-color;
+    margin:v.$spacing-300 0;
+        @media(min-width: b.$bp-lg){
+            margin:v.$spacing-500 0;
+        }   
+}
+
+.destination__stats{
+    @include m.flex(column,flex-start,center);
+    gap     : v.$spacing-300;
+    width   : 100%;
+
+    @media(min-width: b.$bp-md){
+    display               : grid;
+    grid-template-columns : repeat(2,1fr);
+    align-items           : center;
+    justify-content       : center;
+    }
+     
+    @media(min-width: b.$bp-lg){
+    text-align             : left;
+    }
+}
+
+.destination__distance,
+.destination__time{
+    @include m.flex(column,center,center);
+    gap        : v.$spacing-150 ;
+    text-align : center;
+
+    @media(min-width: b.$bp-lg){
+
+        align-items : flex-start;
+        text-align  : left;
+
+    }
+}
+.destination__distance-title,
+.destination__time-title{
+    font-size   : v.$fs-50;
+    color       : v.$primary-text-color;
+    font-family : v.$ff-barlow-condensed;
+} 
+.destination__distance-value,
+.destination__time-value{
+    font-size   : v.$fs-600;
+    color       : v.$secondary-text-color;
+    font-family : v.$ff-bellefair;
+}
+.hidden{
+    display:none;
+}

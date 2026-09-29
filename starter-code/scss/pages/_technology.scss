@@ -1,0 +1,195 @@
+@use "../abstract/variables" as v;
+@use "../abstract/breakpoints" as b;
+@use "../abstract/mixins" as m;
+
+//.technology__page
+body.technology-page{
+    background-image: url('/starter-code/assets/technology/background-technology-mobile.jpg');
+    background-size     : cover;
+    background-position : center;
+    min-height          : 100vh;
+
+    @media(min-width: b.$bp-md){
+    background-image    : url('../assets/technology/background-technology-tablet.jpg');
+    }
+
+    @media(min-width: b.$bp-lg){
+    background-image    : url('../assets/technology/background-technology-desktop.jpg');
+    }   
+}
+
+.technology {
+    @include m.flex(column,center,center);
+    gap                 : v.$spacing-300;
+    width               : 100%;
+    height              : 100%;
+    padding-block-start : v.$spacing-300;
+    padding-block-end   : v.$spacing-600 ;
+  
+    @media(min-width: b.$bp-md){
+    padding-block       : v.$spacing-500;
+    }
+
+    @media(min-width: b.$bp-lg){
+    padding-block       : v.$spacing-600;
+    }
+
+}
+.technology.container {
+     @media(min-width: b.$bp-lg) {
+        @include m.flex(column,center,flex-end);
+        width          : 100%;
+        max-width      : 79.6875rem;
+        padding-inline : 0;
+        margin-right   : 0;
+        margin-left    : auto;
+    }
+}
+.technology__title {
+    @media(min-width: b.$bp-md){
+       text-align  : left;
+    }
+}
+.technology__content{
+    @include m.flex(column,center,center);
+    gap     : v.$spacing-400;
+  
+    @media(min-width: b.$bp-lg){
+    display               : grid;
+    grid-template-areas   : "info image";
+    grid-template-columns : auto auto;
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+}   
+
+.technology__explorer{
+    @include m.flex(column,center,center);
+    gap                 : v.$spacing-500;
+    width               : 100%;
+    max-width           : 32rem;
+    text-align          : center;
+
+    @media(min-width: b.$bp-lg){
+        grid-area             : info;
+        max-width             : unset;
+        display               : grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        gap                   : v.$spacing-800;
+        align-items           : center;
+        justify-content       : center;
+    }
+}
+
+.technology__info {
+    @include m.flex(column,center,center);
+    gap         : v.$spacing-200;
+    width       : 100%;
+    text-align  : center;
+   
+    display     : none;
+    max-width   : 32rem;
+
+    @media(min-width: b.$bp-lg){
+      align-items: flex-start;
+      justify-content: center;
+      
+    }
+    &.active {
+        display: flex;
+    }
+}
+
+.technology__bio{
+    
+    max-width      : 46ch;
+    width          : 100%;
+    margin-inline  : auto;
+    text-align     : center;
+
+    @media(min-width: b.$bp-md){
+    max-width               : 65ch;
+    }
+    @media(min-width: b.$bp-lg){
+    text-align          : left;
+    margin-inline       : 0;
+    padding-block-start : v.$spacing-100;
+    }
+ 
+}
+
+.technology__tabs{
+    @include m.flex(row,center,center);
+    gap             : v.$spacing-200;
+   
+    @media(min-width:b.$bp-lg){
+        @include m.flex(column,center,center);
+        gap             : v.$spacing-400;
+    }
+}
+
+.technology__tab-btn{
+    border      : none;        // removes default border
+    outline     : none;       // removes focus outline
+    appearance  : none;    // removes browser button styling
+  
+  // your styles
+  width             : clamp(40px, 7.9vw, 80px);
+  height            : clamp(40px, 7.9vw, 80px);
+  border-radius     : 50%;
+  background-color  : transparent;
+  opacity           : 1;
+  color             : v.$secondary-text-color;
+  text-align        : center;
+  cursor            : pointer;
+
+  border            : 1px solid rgba(255, 255, 255, 0.25); // inactive border
+
+  &:hover {
+    border-color: v.$white; // hover border
+  }
+
+  &.active {
+    background-color  : v.$white;
+    color             : v.$black;
+    border-color      : v.$white; // active border
+  }
+
+ &:focus-visible {
+    outline       : 2px solid v.$white;
+    outline-offset: 4px;
+    border-radius : 50%; // circular focus ring
+  }
+}
+
+.technology__image-wrapper {
+    padding-block-start : v.$spacing-800;
+    margin-inline       : calc(-1 * v.$spacing-300); // matches mobile padding
+
+   @media (min-width: b.$bp-md) {
+     margin-inline     : calc(-1 * v.$spacing-500); // matches tablet padding
+   }
+
+  @media (min-width: b.$bp-lg) {
+    padding-block       : v.$spacing-800;
+    margin-inline       : 0; 
+    grid-area           : image;
+  }
+}
+
+.technology__image {
+    height     : 16.125rem;
+    object-fit : cover;
+
+  @media (min-width: b.$bp-md) {
+    height     : 22.3125rem;
+  }
+    
+   @media (min-width: b.$bp-lg) {
+    width      : 38rem;// 608px;
+    height     : auto;
+   }
+}
+
+.hidden {
+    display: none;
+}

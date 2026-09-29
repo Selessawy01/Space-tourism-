@@ -1,0 +1,61 @@
+@use "../abstract/variables" as v;
+@use "../abstract/breakpoints" as b;
+@use "../abstract/mixins" as m;
+
+.header{
+    @include m.flex(row,space-between,center);
+    padding   : v.$spacing-300;
+    position  : relative;
+
+    @media(min-width: b.$bp-md){
+       padding:0;
+    }
+
+    @media(min-width:b.$bp-lg){
+        padding-block-start : v.$spacing-500;
+    }
+}
+
+.header__bar {
+
+    @include m.flex(row,space-between,center);
+        width : 100%;
+   
+    @media(min-width: b.$bp-md){
+        width                : auto;
+        padding-inline-start : clamp(v.$spacing-500,5vw,v.$spacing-800);
+    }
+}
+
+.header__logo{
+    width  : clamp(v.$spacing-500,10vw,v.$spacing-600);
+    height : clamp(v.$spacing-500,8vw,v.$spacing-600);
+}
+
+.header__line{
+    display         : none;
+
+    @media(min-width: b.$bp-xl){
+        width       : 35rem;
+        height      : 1px;
+    
+        position    : absolute;
+        bottom      : 35%;
+        left        : 25%;
+        transform   : translateX(-25%);
+        z-index     : 100;
+        display     : block;
+        
+        background-color : v.$white;
+        opacity          : 1;
+    }   
+}
+
+.header__toggle {
+    width   : 2.5rem;
+    height  : 2.5rem;
+
+    @media(min-width: b.$bp-md){
+        display: none;
+    }   
+}

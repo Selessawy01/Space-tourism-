@@ -1,0 +1,19 @@
+@use '../abstract/variables' as v;
+
+.btn {
+  //display       : inline-flex;
+  //border-radius : v.$border-radius-s;
+  border        : none;
+
+  background : none;
+  cursor     : pointer;
+  
+  //font-family : inherit;
+  //font-size   : v.$fs-100;
+  //font-weight : v.$fw-medium;
+  //transition  : all 0.3s ease;
+  //text-decoration : none;
+ // white-space     :nowrap;
+
+
+}

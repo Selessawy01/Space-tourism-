@@ -1,0 +1,89 @@
+@use "../abstract/variables" as v;
+@use "../abstract/breakpoints" as b;
+@use "../abstract/mixins" as m;
+
+body.home-page{
+    background-image    : url('../assets/home/background-home-mobile.jpg');
+    background-size     : cover;
+    background-position : center;
+    min-height          : 100vh;
+
+    @media(min-width: b.$bp-md){
+        background-image: url('../assets/home/background-home-tablet.jpg');
+    }
+
+    @media(min-width: b.$bp-lg){
+        background-image: url('../assets/home/background-home-desktop.jpg');
+    }   
+}
+
+.intro{
+   width:100%;
+   height:100%;
+   //@include m.flex(column,center,center);
+   gap: v.$spacing-1000;
+   @include m.flex(column,flex-start,center);
+    @media(min-width: b.$bp-md){
+        padding-block:128px;
+       // height:100vh;
+        gap:auto;
+    }
+
+    @media(min-width: b.$bp-lg){
+        //padding: 0 clamp(v.$spacing-400,10vw,v.$spacing-1000);
+        height: 100%;
+        max-width:1110px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+       // align-items: flex-end;
+        justify-self: flex-end;
+    }
+}
+
+.intro__text{
+    @include m.flex(column,center,center);
+    text-align  : center;
+    gap         : v.$spacing-300;
+    
+    @media(min-width: b.$bp-lg){
+        text-align  : left;
+        align-items : flex-start;
+    }
+}
+
+
+/*.intro__link{
+ //  @include m.flex(row,center,center);
+ //   height:100%;
+   
+   
+   
+    @media(min-width: b.$bp-lg){
+       justify-content:flex-end;
+       align-self: flex-end;
+    }
+}*/
+
+.intro__button{
+
+   @include m.flex(row,center,center);
+    font-size        : clamp(18px,4.5vw,32px);
+    width            : clamp(144px,37vw,272px);
+    height           : clamp(144px,37vw,272px);
+    text-align       : center;
+    color            : v.$color-blue-900;
+    text-decoration: none;
+   
+    background-color : v.$white;
+    border           : none;
+    border-radius    : 50%;
+    transition       : all 0.3s ease-in-out;
+    cursor           : pointer;
+   
+    &:hover{
+      //  background-color : v.$primary-text-color;
+      //  color            : v.$secondary-text-color;
+       // transform        : scale(1.1);
+        box-shadow: 0 0 0 5rem rgba(255, 255, 255, 0.1);
+    }
+}
